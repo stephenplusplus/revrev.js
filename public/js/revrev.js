@@ -1,11 +1,7 @@
 (function($, w, d, undefined){
 
 	Math.randomNumber = function (fromThis, toThis) {
-		return Math.floor( Math.random() * ( toThis - fromThis + 1 ) ) + fromThis;
-	};
-
-	Object.prototype.isArray = function () {
-		return Object.prototype.toString.call(this) === '[object Array]';
+		return Math.floor(Math.random() * ( toThis - fromThis + 1 )) + fromThis;
 	};
 
 	$.fn.revrev = function () {
