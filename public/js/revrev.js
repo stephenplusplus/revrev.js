@@ -29,7 +29,7 @@
 			var frag = document.createDocumentFragment()
 				, origElem = elem
 				, html = ''
-				, elem = cfg.just === 'string' ? origElem.text().trim() : origElem.children().length
+				, elem = cfg.just === 'string' ? origElem.html().trim() : origElem.children().length
 				, i = 0
 				, l = elem.length
 				, cray = cfg.revrevCray
@@ -41,6 +41,10 @@
 				, updown = also.indexOf('updown') > -1
 				, squish = also.indexOf('squish') > -1
 				, colorize = also.indexOf('colorize') > -1
+				, tags = []
+				, tagElem
+				, tagContent
+				, tagBuilding = false;
 
 			while ( noRev.length < noRevCap ) {
 				var randomNumber = Math.randomNumber(0, l);
@@ -52,13 +56,50 @@
 					, revChar = elem.charAt(i)
 					, nothing = revChar === ' '
 					, house = d.createElement('span');
-				if ( rev && cray > 0 ) house.classList.add('revrev');
-				if ( cap && i % 2 === 0 && !nothing ) house.classList.add('revrevcap');
-				if ( updown && i % 2 === 1 && !nothing ) house.classList.add('revrevupdown');
-				if ( squish && i % 2 === 0 ) house.classList.add('revrevsquish');
-				if ( colorize && i % ( l / 3 ) < ( l / 6 ) ) house.style.color = colors[Math.randomNumber(0, colors.length)]; 
-				house.innerText = elem.charAt(i);
-				frag.appendChild(house);
+
+				if ( revChar === '<' ) {
+					tagBuilding = true;
+					if ( tags.length === 2 ) {
+						tagElem += revChar;
+					} else {
+						tags.house = house;
+						tagElem = revChar;
+					}
+				} else if ( tagElem !== '' && revChar !== '>' ) {
+					tagElem += revChar;
+				} else if ( tagElem !== '' && revChar === '>' ) {
+					tags.push( tagElem + '>' );
+					tagElem = '';
+					tagContent = '';
+				} else if ( tags.length === 1 ) {
+					tagContent += revChar;
+				} else if ( tags.length === 2 ) {
+					tagBuilding = false;
+					tags = [];
+				};
+
+				if ( rev && cray > 0 )
+					house.classList.add('revrev');
+				if ( cap && i % 2 === 0 && !nothing )
+					house.classList.add('revrevcap');
+				if ( updown && i % 2 === 1 && !nothing )
+					house.classList.add('revrevupdown');
+				if ( squish && i % 2 === 0 )
+					house.classList.add('revrevsquish');
+				if ( colorize && i % ( l / 3 ) < ( l / 6 ) )
+					house.style.color = colors[Math.randomNumber(0, colors.length)]; 
+
+				if ( tagBuilding ) {
+					if ( tags.length === 1 ) {
+						var tagContentBuild = tagContent;
+					} else if ( tags.length === 2 ) {
+						tags.house.innerHTML = tags[0] + tagContentBuild + tags[1];
+						frag.appendChild(tags.house);
+					};
+				} else {
+					house.innerText = revChar;
+					frag.appendChild(house);
+				};
 			};
 
 			return origElem.html(frag);

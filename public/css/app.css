@@ -4,49 +4,56 @@
 }
 
 body { 
-	font-family: 'The Girl Next Door';
+	font-family: 'Ropa Sans';
 	font-size: 62.5%;
 	color: #333;
 	background-color: rgb(111, 211, 255);
+	text-align: center;
 }
 
-section {
-	text-align: center;
+.hollywood {
 	font-size: 10em;
 	padding-top: 1em;
 	background-color: rgba(255, 255, 255, .7);
 	border-bottom: .2em solid rgba(255, 255, 255, .3);
 	box-shadow: 1em 1em 28em rgba(255, 255, 255, .8);
-}
-
-.hollywood {
-	font-family: 'Ropa Sans';
 	color: #fff;
 	text-shadow: .03em .03em .1em rgba(0, 0, 0, .1);
 }
 
-.revrev {
-	display: inline-block;
-	overflow: visible;
-	-webkit-transform: rotateY(180deg);
-	-moz-transform: rotateY(180deg);
-	-o-transform: rotateY(180deg);
-	-ms-transform: rotateY(180deg);
-	transform: rotateY(180deg);
-	direction: rtl;
+.hipsta,
+.link {
+	font-size: 2.7em;
+	padding: 1em 2em;
 }
 
-.revrevcap {
-	text-transform: capitalize;
-	font-size: 1.1em;
+.hipsta {
+	background-color: rgba(255, 255, 255, .6);
 }
 
-.revrevupdown {
+.link a {
+	opacity: .8;
+	display: inline;
+	font-size: 2em;
+	color: #333;
+	text-decoration: none;
+}
+
+.link a:hover {
+	opacity: 1;
 	position: relative;
-	top: -.07em;
-	font-size: 1.1em;
+	top: .01em;
+	left: .05em;
 }
 
-.revrevsquish {
-	letter-spacing: -0.11em;
+.link a:active {
+	box-shadow: -.1em -.1em 2em rgba(255, 255, 255, .8);
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.link a span {
+	background-color: rgba(255, 255, 255, .5);
+	border: .1em solid rgba(255, 255, 255, .6);
 }
