@@ -1,0 +1,13 @@
+* { margin:0; padding:0; }
+
+body { font-family: 'Lovers Quarrel'; font-size:80px; }
+
+.revrev {
+	display:inline-block;
+	-webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+     transform: rotateY(180deg);
+     direction: rtl;
+}
