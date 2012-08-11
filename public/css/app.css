@@ -2,6 +2,8 @@
 
 body { font-family: 'Lovers Quarrel'; font-size:80px; }
 
+section { text-align: center; }
+
 .revrev {
 	display:inline-block;
 	-webkit-transform: rotateY(180deg);
