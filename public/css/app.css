@@ -1,15 +1,52 @@
-* { margin:0; padding:0; }
+* {
+	margin: 0;
+	padding: 0;
+}
 
-body { font-family: 'Lovers Quarrel'; font-size:80px; }
+body { 
+	font-family: 'The Girl Next Door';
+	font-size: 62.5%;
+	color: #333;
+	background-color: rgb(111, 211, 255);
+}
 
-section { text-align: center; }
+section {
+	text-align: center;
+	font-size: 10em;
+	padding-top: 1em;
+	background-color: rgba(255, 255, 255, .7);
+	border-bottom: .2em solid rgba(255, 255, 255, .3);
+	box-shadow: 1em 1em 28em rgba(255, 255, 255, .8);
+}
+
+.hollywood {
+	font-family: 'Ropa Sans';
+	color: #fff;
+	text-shadow: .03em .03em .1em rgba(0, 0, 0, .1);
+}
 
 .revrev {
-	display:inline-block;
+	display: inline-block;
+	overflow: visible;
 	-webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-     transform: rotateY(180deg);
-     direction: rtl;
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	direction: rtl;
+}
+
+.revrevcap {
+	text-transform: capitalize;
+	font-size: 1.1em;
+}
+
+.revrevupdown {
+	position: relative;
+	top: -.07em;
+	font-size: 1.1em;
+}
+
+.revrevsquish {
+	letter-spacing: -0.11em;
 }
