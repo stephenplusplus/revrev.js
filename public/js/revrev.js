@@ -51,7 +51,8 @@
 				var rev = noRev.indexOf(i) === -1
 					, revChar = elem.charAt(i)
 					, nothing = revChar === ' '
-					, house = d.createElement('span');
+					, house = d.createElement('span')
+					, classes = [];
 
 				if ( revChar === '<' ) {
 					tagBuilding = true;
@@ -75,15 +76,18 @@
 				};
 
 				if ( rev && cray > 0 )
-					house.classList.add('revrev');
+					classes.push('revrev');
 				if ( cap && i % 2 === 0 && !nothing )
-					house.classList.add('revrevcap');
+					classes.push('revrevcap');
 				if ( updown && i % 2 === 1 && !nothing )
-					house.classList.add('revrevupdown');
+					classes.push('revrevupdown');
 				if ( squish && i % 2 === 0 )
-					house.classList.add('revrevsquish');
+					classes.push('revrevsquish');
 				if ( colorize && i % ( l / 3 ) < ( l / 6 ) )
-					house.style.color = colors[Math.randomNumber(0, colors.length)]; 
+					house.style.color = colors[Math.randomNumber(0, colors.length)];
+
+				if ( classes.length > 0 )
+					house.className = classes.join(' ');
 
 				if ( tagBuilding ) {
 					if ( tags.length === 1 ) {
@@ -93,7 +97,7 @@
 						frag.appendChild(tags.house);
 					};
 				} else {
-					house.innerText = revChar;
+					house.innerHTML = revChar;
 					frag.appendChild(house);
 				};
 			};
