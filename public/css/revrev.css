@@ -1,0 +1,25 @@
+.revrev {
+	display: inline-block;
+	overflow: visible;
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	direction: rtl;
+}
+
+.revrevcap {
+	text-transform: capitalize;
+	font-size: 1.1em;
+}
+
+.revrevupdown {
+	position: relative;
+	top: -.07em;
+	font-size: 1.1em;
+}
+
+.revrevsquish {
+	letter-spacing: -0.11em;
+}
