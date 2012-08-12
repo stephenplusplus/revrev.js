@@ -1,6 +1,6 @@
-##revrevrev-erse your text!
+##revrev-erse your text!
 - - -
-revrevrev.js is a mostly pointless jQuery plugin that lets you style your text in some cool ways. like, you can flip the letters horizontally so that they rev-rev-reverse. and there are other things, too... random caps, random spacing, random colors, random heights!
+revrev.js is a mostly pointless jQuery plugin that lets you style your text in some cool ways. like, you can flip the letters horizontally so that they rev-rev-reverse. and there are other things, too... random caps, random spacing, random colors, random heights!
 
     <p data-revrev="string"
        data-revrev-cray="10"
@@ -10,7 +10,7 @@ revrevrev.js is a mostly pointless jQuery plugin that lets you style your text i
 
 ##see it!
 - - -
-see it in action [here](http://spsawchuk.github.com/revrevrev.js).
+see it in action [here](http://spsawchuk.github.com/revrev.js).
 
 ##here'r'ur options.
 - - -
