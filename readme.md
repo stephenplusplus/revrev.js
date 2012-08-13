@@ -23,7 +23,7 @@ apply these data attributes to start the revrev engine.
     0-100. this will tell revrev how much reversing to do.
     perhaps you just want to use revrev for one of the other functions. up to you!
 
-####data-revrev-clrz="#hex, colorname" (optional)
+####data-revrev-clrz="#hex, colorname, rgb(255, 255, 255), rgba(0, 0, 0, .5)" (optional)
     ** only if you plan to colorize your text. **
     comma-separated color codes/names you want your text to apply randomly.
 
