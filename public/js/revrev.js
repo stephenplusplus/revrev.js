@@ -1,5 +1,10 @@
 (function($, w, d, undefined){
 
+	String.prototype.trim = function () {
+		if ( String.prototype.trim ) return; 
+		return this.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+	};
+
 	Math.randomNumber = function (fromThis, toThis) {
 		return Math.floor(Math.random() * ( toThis - fromThis + 1 )) + fromThis;
 	};
@@ -25,7 +30,7 @@
 			if ( typeof data.revrevAlso !== 'undefined' )
 				cfg.revrevAlso = defs.revrevAlso.concat( data.revrevAlso.replace(/\s+/g, '').split(',') );
 
-			var frag = document.createDocumentFragment()
+			var frag = d.createDocumentFragment()
 				, origElem = elem
 				, html = ''
 				, elem = cfg.just === 'string' ? origElem.html().trim() : origElem.children().length
