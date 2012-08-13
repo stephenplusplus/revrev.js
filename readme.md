@@ -4,7 +4,7 @@ revrev.js is a mostly pointless jQuery plugin that lets you style your text in s
 
     <p data-revrev="string"
        data-revrev-cray="10"
-       data-revrev-clrz="red, #111, teal, purple"
+       data-revrev-clrz="teal, #444, rgba(255, 255, 255, .7)"
        data-revrev-also="colorize"
     >all of this text gets owned by revrev!</p>
 
