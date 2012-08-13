@@ -36,10 +36,10 @@
 				, noRevCap = Math.ceil(l - l * (cray / 100))
 				, colors = cfg.revrevClrz
 				, also = cfg.revrevAlso
-				, cap = !$.inArray('cap', also)
-				, updown = !$.inArray('updown', also)
-				, squish = !$.inArray('squish', also)
-				, colorize = !$.inArray('colorize', also)
+				, cap = $.inArray('cap', also) > -1
+				, updown = $.inArray('updown', also) > -1
+				, squish = $.inArray('squish', also) > -1
+				, colorize = $.inArray('colorize', also) > -1
 				, tags = []
 				, tagElem
 				, tagContent
@@ -47,11 +47,11 @@
 
 			while ( noRev.length < noRevCap ) {
 				var randomNumber = Math.randomNumber(0, l);
-				if ( !!$.inArray(randomNumber, noRev) ) noRev.push(randomNumber);
+				if ( $.inArray(randomNumber, noRev) === -1 ) noRev.push(randomNumber);
 			};
 
 			for ( ; i < l; i++ ) {
-				var rev = !!$.inArray(i, noRev)
+				var rev = $.inArray(i, noRev) === -1
 					, revChar = elem.charAt(i)
 					, nothing = revChar === ' '
 					, house = d.createElement('span')
@@ -77,6 +77,8 @@
 					tagBuilding = false;
 					tags = [];
 				};
+
+				console.log(rev)
 
 				if ( rev && cray > 0 )
 					classes.push('revrev');
