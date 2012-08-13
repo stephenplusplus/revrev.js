@@ -16,8 +16,11 @@
 				, data = elem.data()
 				, cfg = $.extend({}, defs, data);
 
-			if ( typeof data.revrevClrz !== 'undefined' )
-				cfg.revrevClrz = defs.revrevClrz.concat( data.revrevClrz.replace(/\s+/g, '').split(',') );
+			if ( typeof data.revrevClrz !== 'undefined' ) {
+				cfg.revrevClrz = data.revrevClrz.replace(/\s+/g, '').replace(/,/g, '|');
+				if ( !!cfg.revrevClrz.match(/rgb/i) ) cfg.revrevClrz = cfg.revrevClrz.replace(/\|([0-9|\.])/g, ',$1');
+				cfg.revrevClrz = defs.revrevClrz.concat( cfg.revrevClrz.split('|') );
+			}
 
 			if ( typeof data.revrevAlso !== 'undefined' )
 				cfg.revrevAlso = defs.revrevAlso.concat( data.revrevAlso.replace(/\s+/g, '').split(',') );
