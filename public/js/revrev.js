@@ -1,8 +1,9 @@
 (function($, w, d, undefined){
 
-	String.prototype.trim = function () {
-		if ( String.prototype.trim ) return; 
-		return this.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+	if ( !String.prototype.trim ) {
+		String.prototype.trim = function () {
+			return this.replace(/^\s+|\s+$/g,'');
+		};
 	};
 
 	Math.randomNumber = function (fromThis, toThis) {
