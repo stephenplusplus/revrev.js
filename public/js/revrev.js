@@ -78,8 +78,6 @@
 					tags = [];
 				};
 
-				console.log(rev)
-
 				if ( rev && cray > 0 )
 					classes.push('revrev');
 				if ( cap && i % 2 === 0 && !nothing )
