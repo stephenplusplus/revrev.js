@@ -1,0 +1,59 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body { 
+	font-family: 'Ropa Sans';
+	font-size: 62.5%;
+	color: #333;
+	background-color: rgb(111, 211, 255);
+	text-align: center;
+}
+
+.hollywood {
+	font-size: 10em;
+	padding-top: 1em;
+	background-color: rgba(255, 255, 255, .7);
+	border-bottom: .2em solid rgba(255, 255, 255, .3);
+	box-shadow: 1em 1em 28em rgba(255, 255, 255, .8);
+	color: #fff;
+	text-shadow: .03em .03em .1em rgba(0, 0, 0, .1);
+}
+
+.hipsta,
+.link {
+	font-size: 2.7em;
+	padding: 1em 2em;
+}
+
+.hipsta {
+	background-color: rgba(255, 255, 255, .6);
+}
+
+.link a {
+	opacity: .8;
+	display: inline;
+	font-size: 2em;
+	color: #333;
+	text-decoration: none;
+}
+
+.link a:hover {
+	opacity: 1;
+	position: relative;
+	top: .01em;
+	left: .05em;
+}
+
+.link a:active {
+	box-shadow: -.1em -.1em 2em rgba(255, 255, 255, .8);
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.link a span {
+	background-color: rgba(255, 255, 255, .5);
+	border: .1em solid rgba(255, 255, 255, .6);
+}
