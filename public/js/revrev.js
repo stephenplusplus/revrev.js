@@ -1,11 +1,5 @@
 (function($, w, d, undefined){
 
-	if ( !String.prototype.trim ) {
-		String.prototype.trim = function () {
-			return this.replace(/^\s+|\s+$/g,'');
-		};
-	};
-
 	Math.randomNumber = function (fromThis, toThis) {
 		return Math.floor(Math.random() * ( toThis - fromThis + 1 )) + fromThis;
 	};
@@ -34,7 +28,7 @@
 			var frag = d.createDocumentFragment()
 				, origElem = elem
 				, html = ''
-				, elem = cfg.just === 'string' ? origElem.html().trim() : origElem.children().length
+				, elem = cfg.just === 'string' ? $.trim( origElem.html() ) : origElem.children().length
 				, i = 0
 				, l = elem.length
 				, cray = cfg.revrevCray
@@ -42,10 +36,10 @@
 				, noRevCap = Math.ceil(l - l * (cray / 100))
 				, colors = cfg.revrevClrz
 				, also = cfg.revrevAlso
-				, cap = also.indexOf('cap') > -1
-				, updown = also.indexOf('updown') > -1
-				, squish = also.indexOf('squish') > -1
-				, colorize = also.indexOf('colorize') > -1
+				, cap = !$.inArray('cap', also)
+				, updown = !$.inArray('updown', also)
+				, squish = !$.inArray('squish', also)
+				, colorize = !$.inArray('colorize', also)
 				, tags = []
 				, tagElem
 				, tagContent
@@ -53,11 +47,11 @@
 
 			while ( noRev.length < noRevCap ) {
 				var randomNumber = Math.randomNumber(0, l);
-				if ( noRev.indexOf(randomNumber) === -1 ) noRev.push(randomNumber);
+				if ( !!$.inArray(randomNumber, noRev) ) noRev.push(randomNumber);
 			};
 
 			for ( ; i < l; i++ ) {
-				var rev = noRev.indexOf(i) === -1
+				var rev = !!$.inArray(i, noRev)
 					, revChar = elem.charAt(i)
 					, nothing = revChar === ' '
 					, house = d.createElement('span')
@@ -70,7 +64,7 @@
 					} else {
 						tags.house = house;
 						tagElem = revChar;
-					}
+					};
 				} else if ( tagElem !== '' && revChar !== '>' ) {
 					tagElem += revChar;
 				} else if ( tagElem !== '' && revChar === '>' ) {
