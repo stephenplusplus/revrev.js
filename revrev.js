@@ -20,15 +20,15 @@
 				cfg.revrevClrz = data.revrevClrz.replace(/\s+/g, '').replace(/,/g, '|');
 				if ( !!cfg.revrevClrz.match(/rgb/i) ) cfg.revrevClrz = cfg.revrevClrz.replace(/\|([0-9|\.])/g, ',$1');
 				cfg.revrevClrz = defs.revrevClrz.concat( cfg.revrevClrz.split('|') );
-			}
+			};
 
 			if ( typeof data.revrevAlso !== 'undefined' )
 				cfg.revrevAlso = defs.revrevAlso.concat( data.revrevAlso.replace(/\s+/g, '').split(',') );
 
-			var frag = document.createDocumentFragment()
+			var frag = d.createDocumentFragment()
 				, origElem = elem
 				, html = ''
-				, elem = cfg.just === 'string' ? origElem.html().trim() : origElem.children().length
+				, elem = cfg.just === 'string' ? $.trim( origElem.html() ) : origElem.children().length
 				, i = 0
 				, l = elem.length
 				, cray = cfg.revrevCray
@@ -36,10 +36,10 @@
 				, noRevCap = Math.ceil(l - l * (cray / 100))
 				, colors = cfg.revrevClrz
 				, also = cfg.revrevAlso
-				, cap = also.indexOf('cap') > -1
-				, updown = also.indexOf('updown') > -1
-				, squish = also.indexOf('squish') > -1
-				, colorize = also.indexOf('colorize') > -1
+				, cap = $.inArray('cap', also) > -1
+				, updown = $.inArray('updown', also) > -1
+				, squish = $.inArray('squish', also) > -1
+				, colorize = $.inArray('colorize', also) > -1
 				, tags = []
 				, tagElem
 				, tagContent
@@ -47,11 +47,11 @@
 
 			while ( noRev.length < noRevCap ) {
 				var randomNumber = Math.randomNumber(0, l);
-				if ( noRev.indexOf(randomNumber) === -1 ) noRev.push(randomNumber);
+				if ( $.inArray(randomNumber, noRev) === -1 ) noRev.push(randomNumber);
 			};
 
 			for ( ; i < l; i++ ) {
-				var rev = noRev.indexOf(i) === -1
+				var rev = $.inArray(i, noRev) === -1
 					, revChar = elem.charAt(i)
 					, nothing = revChar === ' '
 					, house = d.createElement('span')
@@ -64,7 +64,7 @@
 					} else {
 						tags.house = house;
 						tagElem = revChar;
-					}
+					};
 				} else if ( tagElem !== '' && revChar !== '>' ) {
 					tagElem += revChar;
 				} else if ( tagElem !== '' && revChar === '>' ) {
