@@ -10,7 +10,7 @@ revrev.js is a mostly pointless jQuery plugin that lets you style your text in s
 
 ##see it!
 - - -
-see it in action [here](http://spsawchuk.github.com/revrev.js).
+see it in action [here](http://stephenplusplus.github.io/revrev.js).
 
 ##here'r'ur options.
 - - -
